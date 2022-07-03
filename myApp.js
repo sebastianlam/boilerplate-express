@@ -8,9 +8,11 @@ app.use(
   express.static(public)
 );
 app.get('/', function(req, res) {
-    res.sendFile(spotlight);
-  });
-
+  res.sendFile(spotlight);
+});
+app.get("/json", function(req, res) {
+  res.json({"message": "Hello json"});
+});
 
 
 
