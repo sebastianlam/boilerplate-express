@@ -1,12 +1,11 @@
 let express = require('express');
 let app = express();
 let spotlight = __dirname + "/views/index.html";
-let stylist = __dirname + "/public/style.css";
-let square = __dirname + "/public";
+let public = __dirname + "/public";
 console.log("Hello World");
 app.use(
-  square,
-  express.static(stylist)
+  "/public",
+  express.static(public)
 );
 app.get('/', function(req, res) {
     res.sendFile(spotlight);
