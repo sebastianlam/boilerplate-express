@@ -13,10 +13,10 @@ app.get('/', function(req, res) {
   res.sendFile(spotlight);
 });
 app.get("/json", function(req, res) {
-  if (process.env.MESSAGE_STYLE == uppercase) {
+  if (process.env.MESSAGE_STYLE == "uppercase") {
     defMessage.message = defMessage.message.toUpperCase();
   }
-  res.json({"message": "Hello json"});
+  res.json(defMessage);
 });
 
 
