@@ -6,6 +6,12 @@ let public = __dirname + "/public";
 console.log("Hello World", envConfig);
 let defMessage = "Hello json";
 app.use(
+  function(req, res, next) {
+    console.log(req.method + " " + req.path + " - " + req.ip);
+    next();
+  }
+)
+app.use(
   "/public",
   express.static(public)
 );
@@ -18,12 +24,7 @@ app.get("/json", function(req, res) {
   }
   res.json({"message": defMessage});
 });
-app.use(
-  function(req, res, next) {
-    console.log(req.method + " " + req.path + " - " + req.ip);
-    next();
-  }
-)
+
 
 
 
