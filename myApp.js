@@ -4,7 +4,7 @@ let app = express();
 let spotlight = __dirname + "/views/index.html";
 let public = __dirname + "/public";
 console.log("Hello World", envConfig);
-let defMessage = "Hello json"
+let defMessage = "Hello json";
 app.use(
   "/public",
   express.static(public)
