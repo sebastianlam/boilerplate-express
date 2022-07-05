@@ -35,6 +35,12 @@ app.get(
     res.json({time: req.time});
   }
 );
+app.get(
+  "/:word/echo",
+  function(req, rex, next) {
+    res.json({echo: req.params.word});
+  }
+)
 
 
 
