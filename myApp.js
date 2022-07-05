@@ -43,6 +43,14 @@ app.get(
     res.json({time: req.time});
   }
 );
+app.get(
+  "/name",
+  function(req, res) {
+    let fName = req.query.first;
+    let lName = req.query.last;
+    res.json({name: `${fName} ${lName}`});
+  }
+)
 
 
 
