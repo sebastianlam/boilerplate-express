@@ -20,7 +20,7 @@ app.use(
 );
 
 app.use(
-  bodyParser.urlencoded({extended: false});
+  bodyParser.urlencoded({extended: false})
 )
 
 app.get(
