@@ -9,12 +9,20 @@ Date().toString()
 app.use(
   function(req, res, next) {
     console.log(req.method + " " + req.path + " - " + req.ip);
+    console.log(req.params);
     next();
   }
 )
 app.use(
   "/public",
   express.static(public)
+);
+app.get(
+  "/:word/echo",
+  function(req, res) {
+    const { word } = req.params;
+    res.json({echo: word});
+  }
 );
 app.get('/', function(req, res) {
   res.sendFile(spotlight);
@@ -35,12 +43,7 @@ app.get(
     res.json({time: req.time});
   }
 );
-app.get(
-  "/:word/echo",
-  function(req, res, next) {
-    res.json({echo: req.params.word});
-  }
-)
+
 
 
 
