@@ -1,4 +1,5 @@
 let envConfig = require('dotenv').config();
+let bodyParser = require('body-parser');
 let express = require('express');
 let app = express();
 let spotlight = __dirname + "/views/index.html";
@@ -17,6 +18,11 @@ app.use(
   "/public",
   express.static(public)
 );
+
+app.use(
+  bodyParser.urlencoded({extended: false});
+)
+
 app.get(
   "/:word/echo",
   function(req, res) {
