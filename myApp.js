@@ -58,7 +58,14 @@ app.get(
   }
 )
 
-
+app.post(
+  "/name",
+  function(req, res) {
+    let fName = req.body.first;
+    let lName = req.body.last;
+    res.json({name: `${fName} ${lName}`});
+  }
+)
 
 
 
